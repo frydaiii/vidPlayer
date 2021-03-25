@@ -1,11 +1,10 @@
-# python3 subs.py [downloadUrl] [destination]
-
 import os
 import sys
 import cgi
 import requests
 import zipfile
 import webvtt
+from pyunpack import Archive
 
 if len(sys.argv)<3:
     print('Missing download url, or destination, or both.')
@@ -29,8 +28,11 @@ else:
 
         # extract zip file
         zipDir = zipFilename[:-4]
-        with zipfile.ZipFile(zipFilename, 'r') as zip_ref:
-            zip_ref.extractall(zipDir)
+        if not os.path.isdir(zipDir):
+            os.mkdir(zipDir)
+        Archive(zipFilename).extractall(zipDir) 
+        # with zipfile.ZipFile(zipFilename, 'r') as zip_ref:
+        #     zip_ref.extractall(zipDir)
         
         # delete zip file
         os.remove(zipFilename)
