@@ -1,8 +1,11 @@
 # vidPlayer
 ## Videos player with subtitles
 *Change root folder in value.js* <br/>
-*Install needed python module in routes/subs.py*
 ### Start
+```pip3 install webvtt-py```<br>
+```sudo apt-get install unzip unrar p7zip-full```<br>
+```pip3 install patool```<br>
+```pip3 install pyunpack```<br>
 ```npm install```<br>
 ```npm start```
 ### Choose video and subtitle at /
