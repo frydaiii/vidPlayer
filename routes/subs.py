@@ -54,7 +54,22 @@ else:
             if file[-3:]=='srt': srts.append(file)
 
         # convert
-        for srt in srts:
-            webvtt.from_srt(srt).save()
+        try:
+            for srt in srts:
+                webvtt.from_srt(srt).save()
+        except Exception:
+            for srt in srts:
+                f = open(srt, 'r', encoding='utf-16')
+                sub = "WEBVTT\n\n"
+                for line in f:
+                    temp = line[:-1]
+                    if not temp.isdigit():
+                        sub += line.replace(',', '.')
+                f.close()
+
+                vtt = srt.replace('.srt', '.vtt');
+                f = open(vtt, 'w')
+                f.write(sub)
+                f.close()
     except Exception as e:
         print(e)   
