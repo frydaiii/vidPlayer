@@ -1,5 +1,5 @@
 # vidPlayer
-## Videos player with subtitles
+## Videos player with subtitles from Subscene.com
 *Change root folder in value.js* <br/>
 ### Start
 ```pip3 install webvtt-py```<br>
