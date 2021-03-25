@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLay video</title>
+    <script>
+      window.onload = async function() {
+        const baseUrl = 'http://143.198.193.37:3000';
+        window.fetch(baseUrl+'/links')
+        .then(async (res) => {
+          const data = await res.json();
+          const videos = data.videos;
+          const subtitles = data.subtitles;
+
+          videos.forEach(item => {
+            const opt = document.createElement("option");
+            opt.innerHTML = item;
+            opt.setAttribute("value", baseUrl+item);
+            document.getElementById("video").appendChild(opt);
+          });
+
+          subtitles.forEach(item => {
+            const opt = document.createElement("option");
+            opt.innerHTML = item;
+            opt.setAttribute("value", baseUrl+item);
+            document.getElementById("subtitle").appendChild(opt);
+          });
+        })
+    }
+    </script>
+  </head>
+<body>
+    <h1 style="text-align: center;">okeconde</h1>
+    <form id="playerForm" action="http://143.198.193.37:3000/links" method="POST" 
+      style="margin: auto; width: 90%; border: 3px solid green;">
+      <div style="margin: auto; width: 90%;">
+        <label for="video" style="width: 8%;">Videos</label>
+        <select id="video" name="video" form="playerForm" style="width: 92%; padding: 3px; margin: 10px;"></select>
+      </div>
+      <div style="margin: auto; width: 90%;">
+        <label for="video" style="width: 10%;">Subtitles</label>
+        <select id="subtitle" name="subtitle" form="playerForm" style="width: 90%; padding: 3px; margin: 10px;"></select>
+      </div>
+      <div style="margin: auto; width: 30%; margin-bottom: 10px;">
+        <input type="submit" style="width: 100%;">
+      </div>
+    </form>
+</body>
+</html>
