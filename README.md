@@ -1,8 +1,8 @@
 # vidPlayer
 ## Videos player with subtitles
-*Change root folder in value.js*
-*Install needed python module in routes/subs.py*
+*Change root folder in value.js & install needed python module in routes/subs.py*
 ### Start
+```npm innstall```
 ```npm start```
 ### Choose video and subtitle at /
 ![](https://github.com/frydaiii/vidPlayer/blob/master/public/images/example1.png)
