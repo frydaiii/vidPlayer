@@ -16,14 +16,14 @@
           videos.forEach(item => {
             const opt = document.createElement("option");
             opt.innerHTML = item;
-            opt.setAttribute("value", baseUrl+item);
+            opt.setAttribute("value", encodeURI(baseUrl+item));
             document.getElementById("video").appendChild(opt);
           });
 
           subtitles.forEach(item => {
             const opt = document.createElement("option");
             opt.innerHTML = item;
-            opt.setAttribute("value", baseUrl+item);
+            opt.setAttribute("value", encodeURI(baseUrl+item));
             document.getElementById("subtitle").appendChild(opt);
           });
         })
