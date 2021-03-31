@@ -16,7 +16,8 @@ async function getFiles(dir) {
 router.post('/', async function(req, res, next) {
   try {
     res.send(
-      `<video controls preload="metadata" style="width: 95%; height: 95%"> \
+      `<h3>${req.body.video}</h3>
+      <video controls preload="metadata" style="width: 95%; height: 95%"> \
         <source src=${req.body.video}> \
         <track label="Vietnamese" kind="subtitles" srclang="vi" src=${req.body.subtitle}> \
       </video>`
