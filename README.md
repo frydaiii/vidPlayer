@@ -2,6 +2,7 @@
 ## Videos player with subtitles from Subscene.com
 *Change root folder in value.js* <br/>
 *Change baseUrl in public/index.html* <br/>
+*Change action url in actionForm of public/index.html* <br/>
 ### Start
 ```pip3 install webvtt-py```<br>
 ```sudo apt-get install unzip unrar p7zip-full```<br>
