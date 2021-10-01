@@ -5,7 +5,6 @@ var root = require('./value').root;
 var cors = require('cors')
 
 var linksRouter = require('./routes/links');
-var addSubtitles = require('./routes/addSubtitles');
 
 var app = express();
 
@@ -18,6 +17,5 @@ app.use(express.static('public'));
 app.use(express.static(root));
 
 app.use('/links', linksRouter);
-app.use('/add', addSubtitles);
 
 module.exports = app;

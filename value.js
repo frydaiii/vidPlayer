@@ -1,5 +1,4 @@
-const root = '/mnt/volume_sgp1_01/torrent';
-const addSub = 'subs.py'
+const root = '/home/ubuntu/storage';
 
 module.exports = {
     root: root
